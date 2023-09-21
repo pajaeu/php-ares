@@ -1,0 +1,16 @@
+{
+    "name": "pajaeu/php-ares",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Ares\\": "src/Ares/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Paul",
+            "email": "fgocsgo@gmail.com"
+        }
+    ],
+    "require": {}
+}
