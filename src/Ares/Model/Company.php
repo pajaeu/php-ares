@@ -11,6 +11,9 @@ class Company
     private string $city;
     private string $zip;
     private string $country;
+    private string $dateCreated;
+    private string $typeCode;
+    private string $typeString;
 
     /**
      * @return string
@@ -24,7 +27,7 @@ class Company
      * @param string $name
      * @return Company
      */
-    public function setName(string $name): self
+    public function setName(string $name): Company
     {
         $this->name = $name;
         return $this;
@@ -42,25 +45,25 @@ class Company
      * @param string $ico
      * @return Company
      */
-    public function setIco(string $ico): self
+    public function setIco(string $ico): Company
     {
         $this->ico = $ico;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getDic(): ?string
+    public function getDic(): string
     {
         return $this->dic;
     }
 
     /**
-     * @param string|null $dic
+     * @param string $dic
      * @return Company
      */
-    public function setDic(?string $dic): self
+    public function setDic(string $dic): Company
     {
         $this->dic = $dic;
         return $this;
@@ -78,7 +81,7 @@ class Company
      * @param string $street
      * @return Company
      */
-    public function setStreet(string $street): self
+    public function setStreet(string $street): Company
     {
         $this->street = $street;
         return $this;
@@ -96,7 +99,7 @@ class Company
      * @param string $city
      * @return Company
      */
-    public function setCity(string $city): self
+    public function setCity(string $city): Company
     {
         $this->city = $city;
         return $this;
@@ -114,7 +117,7 @@ class Company
      * @param string $zip
      * @return Company
      */
-    public function setZip(string $zip): self
+    public function setZip(string $zip): Company
     {
         $this->zip = $zip;
         return $this;
@@ -132,12 +135,70 @@ class Company
      * @param string $country
      * @return Company
      */
-    public function setCountry(string $country): self
+    public function setCountry(string $country): Company
     {
         $this->country = $country;
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getDateCreated(): string
+    {
+        return $this->dateCreated;
+    }
+
+    /**
+     * @param string $dateCreated
+     * @return Company
+     */
+    public function setDateCreated(string $dateCreated): Company
+    {
+        $this->dateCreated = $dateCreated;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypeCode(): string
+    {
+        return $this->typeCode;
+    }
+
+    /**
+     * @param string $typeCode
+     * @return Company
+     */
+    public function setTypeCode(string $typeCode): Company
+    {
+        $this->typeCode = $typeCode;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypeString(): string
+    {
+        return $this->typeString;
+    }
+
+    /**
+     * @param string $typeString
+     * @return Company
+     */
+    public function setTypeString(string $typeString): Company
+    {
+        $this->typeString = $typeString;
+        return $this;
+    }
+
+
+    /**
+     * @return array
+     */
     public function toArray(): array
     {
         return [
@@ -147,7 +208,10 @@ class Company
             'street' => $this->street,
             'city' => $this->city,
             'zip' => $this->zip,
-            'country' => $this->country
+            'country' => $this->country,
+            'date_created' => $this->dateCreated,
+            'type_code' => $this->typeCode,
+            'type_string' => $this->typeString
         ];
     }
 }

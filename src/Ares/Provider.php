@@ -9,6 +9,7 @@ use Ares\Model\Factory\CompanyFactory;
 
 class Provider
 {
+
     private const ARES_URL = 'http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=';
 
     /**
@@ -32,14 +33,17 @@ class Provider
             throw new NotExistingCompanyException('Company does not exist.');
         }
 
-        return CompanyFactory::create(
-            (string) $data->OF,
-            (string) $data->ICO,
-            (string) $data->DIC,
-            (string) $data->AD->UC,
-            (string) $data->AA->N,
-            (string) $data->AA->PSC,
-            (string) $data->AA->NS,
-        );
+        return CompanyFactory::createFromArray([
+            'name' => (string) $data->OF,
+            'ico' => (string) $data->ICO,
+            'dic' => (string) $data->DIC,
+            'street' => (string) $data->AD->UC,
+            'city' => (string) $data->AA->N,
+            'zip' => (string) $data->AA->PSC,
+            'country' => (string) $data->AA->NS,
+            'dateCreated' => (string) $data->DV,
+            'typeCode' => (string) $data->PF->KPF,
+            'typeString' => (string) $data->PF->NPF,
+        ]);
     }
 }

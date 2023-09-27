@@ -12,5 +12,7 @@
             "email": "fgocsgo@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-simplexml": "*"
+    }
 }

@@ -7,23 +7,18 @@ use Ares\Model\Company;
 class CompanyFactory
 {
 
-    public static function create(
-        string $name,
-        string $ico,
-        string $dic,
-        string $street,
-        string $city,
-        string $zip,
-        string $country
-    ): Company
+    public static function createFromArray(array $data): Company
     {
         return (new Company())
-            ->setName($name)
-            ->setIco($ico)
-            ->setDic($dic)
-            ->setStreet($street)
-            ->setCity($city)
-            ->setZip($zip)
-            ->setCountry($country);
+            ->setName($data['name'])
+            ->setIco($data['ico'])
+            ->setDic($data['dic'])
+            ->setStreet($data['street'])
+            ->setCity($data['city'])
+            ->setZip($data['zip'])
+            ->setCountry($data['country'])
+            ->setDateCreated($data['dateCreated'])
+            ->setTypeCode($data['typeCode'])
+            ->setTypeString($data['typeString']);
     }
 }
