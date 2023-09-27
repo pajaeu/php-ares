@@ -26,8 +26,10 @@ require __DIR__ . '/vendor/autoload.php';
 
 $ares = new Provider();
 
+$ico = 'PASTE-ICO-HERE';
+
 try{
-    $company = $ares->getByIco('PASTE-ICO-HERE');
+    $company = $ares->getByIco($ico);
 } catch (Exception $exception){
     echo $exception->getMessage();
 }
