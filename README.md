@@ -6,6 +6,7 @@
 <p align="center">
     <img src="https://img.shields.io/github/languages/top/pajaeu/php-ares" alt="Package Language" />
     <img src="https://img.shields.io/github/license/pajaeu/php-ares" alt="Package License" />
+    <im src="https://img.shields.io/github/stars/pajaeu/php-ares" alt="Package Stars" />
     <img src="https://img.shields.io/packagist/dt/pajaeu/php-ares" alt="Total Downloads" />
 </p>
 
