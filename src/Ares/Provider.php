@@ -49,7 +49,7 @@ class Provider
             'tradeLicensingAuthorityName' => (string) $data->RRZ->ZU->NZU,
             'financialAuthorityCode' => (string) $data->RRZ->FU->KFU,
             'financialAuthorityName' => (string) $data->RRZ->FU->NFU,
-            'businessSubjects' => $data->PPI->PP->T
+            'businessSubjects' => (array) $data->PPI->PP->T
         ]);
     }
 }
