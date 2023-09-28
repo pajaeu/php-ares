@@ -12,8 +12,9 @@ class Company
     private string $zip;
     private string $country;
     private string $dateCreated;
-    private string $typeCode;
-    private string $typeString;
+    private CompanyType $type;
+    private TradeLicensingAuthority $tradeLicensingAuthority;
+    private FinancialAuthority $financialAuthority;
 
     /**
      * @return string
@@ -160,41 +161,58 @@ class Company
     }
 
     /**
-     * @return string
+     * @return CompanyType
      */
-    public function getTypeCode(): string
+    public function getType(): CompanyType
     {
-        return $this->typeCode;
+        return $this->type;
     }
 
     /**
-     * @param string $typeCode
+     * @param CompanyType $type
      * @return Company
      */
-    public function setTypeCode(string $typeCode): Company
+    public function setType(CompanyType $type): Company
     {
-        $this->typeCode = $typeCode;
+        $this->type = $type;
         return $this;
     }
 
     /**
-     * @return string
+     * @return TradeLicensingAuthority
      */
-    public function getTypeString(): string
+    public function getTradeLicensingAuthority(): TradeLicensingAuthority
     {
-        return $this->typeString;
+        return $this->tradeLicensingAuthority;
     }
 
     /**
-     * @param string $typeString
+     * @param TradeLicensingAuthority $tradeLicensingAuthority
      * @return Company
      */
-    public function setTypeString(string $typeString): Company
+    public function setTradeLicensingAuthority(TradeLicensingAuthority $tradeLicensingAuthority): Company
     {
-        $this->typeString = $typeString;
+        $this->tradeLicensingAuthority = $tradeLicensingAuthority;
         return $this;
     }
 
+    /**
+     * @return FinancialAuthority
+     */
+    public function getFinancialAuthority(): FinancialAuthority
+    {
+        return $this->financialAuthority;
+    }
+
+    /**
+     * @param FinancialAuthority $financialAuthority
+     * @return Company
+     */
+    public function setFinancialAuthority(FinancialAuthority $financialAuthority): Company
+    {
+        $this->financialAuthority = $financialAuthority;
+        return $this;
+    }
 
     /**
      * @return array
@@ -210,8 +228,9 @@ class Company
             'zip' => $this->zip,
             'country' => $this->country,
             'date_created' => $this->dateCreated,
-            'type_code' => $this->typeCode,
-            'type_string' => $this->typeString
+            'type' => $this->type->toArray(),
+            'trade_licensing_authority' => $this->tradeLicensingAuthority->toArray(),
+            'financial_authority' => $this->financialAuthority->toArray(),
         ];
     }
 }

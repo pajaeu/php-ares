@@ -3,6 +3,9 @@
 namespace Ares\Model\Factory;
 
 use Ares\Model\Company;
+use Ares\Model\CompanyType;
+use Ares\Model\FinancialAuthority;
+use Ares\Model\TradeLicensingAuthority;
 
 class CompanyFactory
 {
@@ -18,7 +21,8 @@ class CompanyFactory
             ->setZip($data['zip'])
             ->setCountry($data['country'])
             ->setDateCreated($data['dateCreated'])
-            ->setTypeCode($data['typeCode'])
-            ->setTypeString($data['typeString']);
+            ->setType(new CompanyType($data['typeCode'], $data['typeString']))
+            ->setTradeLicensingAuthority(new TradeLicensingAuthority($data['tradeLicensingAuthorityCode'], $data['tradeLicensingAuthorityName']))
+            ->setFinancialAuthority(new FinancialAuthority($data['financialAuthorityCode'], $data['financialAuthorityName']));
     }
 }

@@ -44,6 +44,10 @@ class Provider
             'dateCreated' => (string) $data->DV,
             'typeCode' => (string) $data->PF->KPF,
             'typeString' => (string) $data->PF->NPF,
+            'tradeLicensingAuthorityCode' => (string) $data->RRZ->ZU->KZU,
+            'tradeLicensingAuthorityName' => (string) $data->RRZ->ZU->NZU,
+            'financialAuthorityCode' => (string) $data->RRZ->FU->KFU,
+            'financialAuthorityName' => (string) $data->RRZ->FU->NFU,
         ]);
     }
 }
