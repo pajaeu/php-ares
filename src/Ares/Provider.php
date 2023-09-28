@@ -4,6 +4,7 @@ namespace Ares;
 
 use Ares\Exception\DatabaseNotRespondingException;
 use Ares\Exception\NotExistingCompanyException;
+use Ares\Model\BusinessSubject;
 use Ares\Model\Company;
 use Ares\Model\Factory\CompanyFactory;
 
@@ -48,6 +49,7 @@ class Provider
             'tradeLicensingAuthorityName' => (string) $data->RRZ->ZU->NZU,
             'financialAuthorityCode' => (string) $data->RRZ->FU->KFU,
             'financialAuthorityName' => (string) $data->RRZ->FU->NFU,
+            'businessSubjects' => $data->PPI->PP->T
         ]);
     }
 }

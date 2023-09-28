@@ -15,6 +15,7 @@ class Company
     private CompanyType $type;
     private TradeLicensingAuthority $tradeLicensingAuthority;
     private FinancialAuthority $financialAuthority;
+    private array $businessSubjects = [];
 
     /**
      * @return string
@@ -217,6 +218,36 @@ class Company
     /**
      * @return array
      */
+    public function getBusinessSubjects(): array
+    {
+        return $this->businessSubjects;
+    }
+
+    /**
+     * @param array $businessSubjects
+     * @return Company
+     */
+    public function setBusinessSubjects(array $businessSubjects): Company
+    {
+        foreach ($businessSubjects as $subject) {
+            $this->addBusinessSubject(new BusinessSubject($subject));
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param BusinessSubject $subject
+     * @return void
+     */
+    public function addBusinessSubject(BusinessSubject $subject): void
+    {
+        $this->businessSubjects[] = $subject;
+    }
+
+    /**
+     * @return array
+     */
     public function toArray(): array
     {
         return [
@@ -231,6 +262,7 @@ class Company
             'type' => $this->type->toArray(),
             'trade_licensing_authority' => $this->tradeLicensingAuthority->toArray(),
             'financial_authority' => $this->financialAuthority->toArray(),
+            'business_subjects' => array_map(fn(BusinessSubject $subject) => $subject->getName(), $this->businessSubjects)
         ];
     }
 }

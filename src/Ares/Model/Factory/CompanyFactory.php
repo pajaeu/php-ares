@@ -23,6 +23,7 @@ class CompanyFactory
             ->setDateCreated($data['dateCreated'])
             ->setType(new CompanyType($data['typeCode'], $data['typeString']))
             ->setTradeLicensingAuthority(new TradeLicensingAuthority($data['tradeLicensingAuthorityCode'], $data['tradeLicensingAuthorityName']))
-            ->setFinancialAuthority(new FinancialAuthority($data['financialAuthorityCode'], $data['financialAuthorityName']));
+            ->setFinancialAuthority(new FinancialAuthority($data['financialAuthorityCode'], $data['financialAuthorityName']))
+            ->setBusinessSubjects($data['businessSubjects']);
     }
 }
