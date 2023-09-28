@@ -15,16 +15,16 @@
 composer require pajaeu/php-ares
 ```
 
-### How to use 
+### How to use
 
 ```php
 <?php
 
-use Ares\Provider;
+use Ares\AresProvider;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$ares = new Provider();
+$ares = new AresProvider();
 
 $ico = 'PASTE-ICO-HERE';
 

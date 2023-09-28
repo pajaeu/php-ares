@@ -4,6 +4,7 @@ namespace Ares\Model;
 
 class Company
 {
+
     private string $name;
     private string $ico;
     private string $dic;

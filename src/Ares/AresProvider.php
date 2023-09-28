@@ -4,11 +4,10 @@ namespace Ares;
 
 use Ares\Exception\DatabaseNotRespondingException;
 use Ares\Exception\NotExistingCompanyException;
-use Ares\Model\BusinessSubject;
 use Ares\Model\Company;
 use Ares\Model\Factory\CompanyFactory;
 
-class Provider
+class AresProvider
 {
 
     private const ARES_URL = 'http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_bas.cgi?ico=';
