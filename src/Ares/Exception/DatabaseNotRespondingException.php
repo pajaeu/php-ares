@@ -2,7 +2,6 @@
 
 namespace Ares\Exception;
 
-class DatabaseNotRespondingException extends \Exception
+class DatabaseNotRespondingException extends AresException
 {
-    protected $message = 'Ares is currently not responding.';
 }

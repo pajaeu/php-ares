@@ -2,7 +2,6 @@
 
 namespace Ares\Exception;
 
-class InvalidIcoException extends \Exception
+class InvalidIcoException extends AresException
 {
-    protected $message = 'Cannot process data, ICO is in wrong format.';
 }
