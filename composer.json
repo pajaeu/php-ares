@@ -1,5 +1,6 @@
 {
     "name": "pajaeu/php-ares",
+    "description": "Simple PHP library that verifies and loads informations about economical subjects registered in the Czech Republic from the ARES database.",
     "type": "library",
     "license": "MIT",
     "autoload": {
