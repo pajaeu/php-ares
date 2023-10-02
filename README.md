@@ -4,6 +4,7 @@
 </p>
 <p align="center">Simple PHP library that verifies and loads informations about economical subjects registered in the Czech Republic from the ARES database.</p>
 <p align="center">
+    <img src="https://github.com/pajaeu/php-ares/actions/workflows/php.yml/badge.svg" alt="Composer tests" />
     <img src="https://img.shields.io/github/languages/top/pajaeu/php-ares" alt="Package Language" />
     <img src="https://img.shields.io/github/license/pajaeu/php-ares" alt="Package License" />
     <img src="https://img.shields.io/github/stars/pajaeu/php-ares" alt="Package Stars" />
